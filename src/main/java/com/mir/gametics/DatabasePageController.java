@@ -1,12 +1,12 @@
 package com.mir.gametics;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 
 public class DatabasePageController {
 
@@ -26,15 +26,35 @@ public class DatabasePageController {
 
     private TableColumn<Game, String> secondColumn;
 
+    private TableColumn.CellEditEvent<Game, String> gameStringCellEditEvent;
+
     private GameModel gameModel;
 
     @FXML
     public void initialize() {
 
         initializeTable();
-
         editBtn.setVisible(false);
         deleteBtn.setVisible(false);
+
+        editBtn.setOnAction(event -> {
+            firstColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+            firstColumn.setOnEditCommit(
+                    gameStringCellEditEvent -> (gameStringCellEditEvent.getTableView().getItems().get(
+                           gameStringCellEditEvent.getTablePosition().getRow())
+                    ).setGameName(gameStringCellEditEvent.getNewValue())
+            );
+
+
+            secondColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+            secondColumn.setOnEditCommit(
+                    gameStringCellEditEvent -> (gameStringCellEditEvent.getTableView().getItems().get(
+                            gameStringCellEditEvent.getTablePosition().getRow())
+                    ).setGameCategory(gameStringCellEditEvent.getNewValue())
+
+            );
+        });
+
         deleteBtn.setOnAction(event -> {
             Game selectedGame = tableView.getSelectionModel().getSelectedItem();
             tableView.getItems().remove(selectedGame);
@@ -49,6 +69,8 @@ public class DatabasePageController {
     }
 
     public void initializeTable() {
+
+        tableView.setEditable(true);
         // Table Columns
         firstColumn = new TableColumn<>("Name");
         secondColumn = new TableColumn<>("Category");
