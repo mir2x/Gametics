@@ -1,12 +1,17 @@
 package com.mir.gametics;
 
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class DatabasePageController {
 
@@ -38,6 +43,18 @@ public class DatabasePageController {
         deleteBtn.setVisible(false);
 
         editBtn.setOnAction(event -> {
+
+//            final Stage dialog = new Stage();
+//            dialog.initModality(Modality.APPLICATION_MODAL);
+//            dialog.initOwner(editBtn.getScene().getWindow());
+//            VBox dialogVbox = new VBox(20);
+//            dialogVbox.getChildren().add(new Text("This is a Dialog"));
+//            Scene dialogScene = new Scene(dialogVbox, 300, 200);
+//            dialog.setScene(dialogScene);
+//            dialog.show();
+
+            DialogBox.getDialogBox((Stage) editBtn.getScene().getWindow(), "You can now edit table");
+
             firstColumn.setCellFactory(TextFieldTableCell.forTableColumn());
             firstColumn.setOnEditCommit(
                     gameStringCellEditEvent -> (gameStringCellEditEvent.getTableView().getItems().get(

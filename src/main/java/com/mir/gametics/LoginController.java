@@ -43,7 +43,7 @@ public class LoginController {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (!resultSet.next()) {
-                System.out.println("wrong");
+                DialogBox.getDialogBox((Stage) userField.getScene().getWindow(), "Wrong Username/Password");
             } else {
                 System.out.println("right");
                 FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("database-page.fxml"));
