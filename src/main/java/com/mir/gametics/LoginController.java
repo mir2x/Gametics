@@ -54,7 +54,6 @@ public class LoginController {
 
             }
 
-
         } catch (SQLException | IOException e) {
             e.printStackTrace();
         }

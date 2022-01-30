@@ -1,6 +1,7 @@
+com/mir/gametics/DialogBox.class
+com/mir/gametics/Game.class
+com/mir/gametics/GameModel.class
 com/mir/gametics/LoginController.class
 com/mir/gametics/DatabasePageController.class
-com/mir/gametics/Game.class
 module-info.class
 com/mir/gametics/Gametics.class
-com/mir/gametics/GameModel.class
