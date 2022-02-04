@@ -5,10 +5,7 @@ import javafx.collections.ObservableList;
 
 public class GameModel {
 
-    ObservableList<Game> gameList = FXCollections.observableArrayList(
-            new Game("Call of Duty 4", "Action"),
-            new Game("Fifa 21", "Sports")
-    );
+    ObservableList<Game> gameList = FXCollections.observableArrayList();
 
     public ObservableList<Game> getGameList() {
         return gameList;
