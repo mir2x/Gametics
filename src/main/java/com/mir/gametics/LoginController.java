@@ -45,10 +45,8 @@ public class LoginController {
             if (!resultSet.next()) {
                 DialogBox.getDialogBox((Stage) userField.getScene().getWindow(), "Wrong Username/Password");
             } else {
-                System.out.println("right");
                 FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("database-page.fxml"));
-                Scene scene = userField.getScene();
-                scene = new Scene(fxmlLoader.load());
+                Scene scene = new Scene(fxmlLoader.load());
                 Stage stage = (Stage) userField.getScene().getWindow();
                 stage.setScene(scene);
 

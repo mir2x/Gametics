@@ -5,3 +5,5 @@ com/mir/gametics/LoginController.class
 com/mir/gametics/DatabasePageController.class
 module-info.class
 com/mir/gametics/Gametics.class
+com/mir/gametics/GameHolder.class
+com/mir/gametics/DetailedGamePageController.class
