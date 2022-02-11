@@ -11,7 +11,7 @@ public class Gametics extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Gametics.class.getResource("login-page.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Gametics.class.getResource("fxml/login-page.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Gametics");
         stage.setScene(scene);

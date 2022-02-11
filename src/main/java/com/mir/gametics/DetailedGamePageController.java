@@ -11,8 +11,6 @@ import java.sql.*;
 
 public class DetailedGamePageController {
 
-    @FXML
-    private TextField nameField;
 
     @FXML
     private Label nameLabel;
@@ -20,6 +18,11 @@ public class DetailedGamePageController {
     private Label categoryLabel;
     @FXML
     private ImageView imageView;
+
+    @FXML
+    private TextField releaseDateField;
+    @FXML
+    private TextField priceField;
 
 
     private Connection connection;
@@ -53,8 +56,12 @@ public class DetailedGamePageController {
             if(resultSet.next()) {
                 nameLabel.setText(resultSet.getString(1));
                 categoryLabel.setText(resultSet.getString(2));
+
                 InputStream inputStream = resultSet.getBinaryStream("picture");
                 imageView.setImage(new Image(inputStream));
+
+                releaseDateField.setText(resultSet.getString(3));
+                priceField.setText("$" + resultSet.getString(4));
             }
         } catch (SQLException e) {
             e.printStackTrace();

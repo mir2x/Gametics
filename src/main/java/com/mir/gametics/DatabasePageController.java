@@ -108,7 +108,7 @@ public class DatabasePageController {
                 if (mouseEvent.isPrimaryButtonDown() && mouseEvent.getClickCount() == 2) {
                     System.out.println(tableView.getSelectionModel().getSelectedItem().getGameName());
                     gameHolder.setName(tableView.getSelectionModel().getSelectedItem().getGameName());
-                    FXMLLoader fxmlLoader = new FXMLLoader(DatabasePageController.class.getResource("detailed-game-page.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(DatabasePageController.class.getResource("fxml/detailed-game-page.fxml"));
 
                     try {
                         scene = new Scene(fxmlLoader.load());

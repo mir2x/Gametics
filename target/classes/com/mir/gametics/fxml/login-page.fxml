@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
-<BorderPane prefHeight="780.0" prefWidth="1220.0" styleClass="parent" stylesheets="@login-styles.css"
+<BorderPane prefHeight="780.0" prefWidth="1220.0" styleClass="parent" stylesheets="@../css/login-styles.css"
             xmlns="http://javafx.com/javafx/11"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.mir.gametics.LoginController">
