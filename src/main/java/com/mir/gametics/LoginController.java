@@ -3,6 +3,7 @@ package com.mir.gametics;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -17,6 +18,10 @@ public class LoginController {
     private TextField userField;
     @FXML
     private PasswordField passwordField;
+    @FXML
+    private Hyperlink createOneHyperLink;
+    @FXML
+    private Hyperlink forgotPasswordHyperLink;
 
     private Connection connection;
 
@@ -28,6 +33,14 @@ public class LoginController {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        createOneHyperLink.setOnAction(event -> {
+
+        });
+
+        forgotPasswordHyperLink.setOnAction(event -> {
+
+        });
     }
 
     public void onLogin() {

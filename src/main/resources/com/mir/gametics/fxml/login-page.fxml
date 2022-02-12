@@ -32,9 +32,9 @@
                                      text=""/>
                 <Button layoutX="218.0" layoutY="468.0" prefHeight="42.0" prefWidth="86.0"
                         styleClass="login-btn" text="Login" onAction="#onLogin" textFill="WHITE"/>
-                <Hyperlink layoutX="188.0" layoutY="622.0" text="Forgot your Password?"/>
+                <Hyperlink layoutX="188.0" layoutY="622.0" text="Forgot your Password?" fx:id="forgotPasswordHyperLink"/>
                 <Label layoutX="114.0" layoutY="665.0" styleClass="label" text="Don't have an account?"/>
-                <Hyperlink layoutX="296.0" layoutY="661.0" text="Create One"/>
+                <Hyperlink layoutX="296.0" layoutY="661.0" text="Create One" fx:id="createOneHyperLink"/>
             </AnchorPane>
         </HBox>
     </center>
