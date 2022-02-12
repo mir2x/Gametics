@@ -28,7 +28,7 @@ public class LoginController {
     @FXML
     public void initialize() {
         try {
-            String connectionUrl = "jdbc:sqlserver://localhost:1433;databaseName=gametics;user=sa;password=p@ssword81";
+            String connectionUrl = "jdbc:sqlserver://localhost:1433;databaseName=gametics;user=sa;password=123";
             connection = DriverManager.getConnection(connectionUrl);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -47,7 +47,15 @@ public class LoginController {
         });
 
         forgotPasswordHyperLink.setOnAction(event -> {
-
+                FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("fxml/forgot-pass-page.fxml"));
+                Scene scene = null;
+                try {
+                    scene = new Scene(fxmlLoader.load());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Stage stage = (Stage) createOneHyperLink.getScene().getWindow();
+                stage.setScene(scene);
         });
     }
 
