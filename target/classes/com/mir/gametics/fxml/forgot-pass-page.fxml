@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1220.0"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+             fx:controller="com.mir.gametics.ForgotPasswordPageController">
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="780.0" prefWidth="1220.0">
+               <children>
+                  <ImageView fitHeight="485.0" fitWidth="1220.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../picture/farr.jpg" />
+                     </image>
+                  </ImageView>
+                  <TextField layoutX="498.0" layoutY="573.0" prefHeight="45.0" prefWidth="241.0" promptText="Enter Your Email" />
+                  <Button layoutX="538.0" layoutY="660.0" mnemonicParsing="false" text="Reset Password" fx:id="resetButton"/>
+                  <Label layoutX="563.0" layoutY="523.0" text="Forgot Password ?" />
+                  <Hyperlink layoutX="667.0" layoutY="661.0" text="Sign In" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>
