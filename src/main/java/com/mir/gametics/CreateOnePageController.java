@@ -10,7 +10,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class RegistrationPageController {
+public class CreateOnePageController {
 
     private Connection connection;
 
@@ -26,25 +26,23 @@ public class RegistrationPageController {
     @FXML
     private PasswordField userPasswordField;
 
-    private void initialize()         
+    @FXML
+    public void initialize()
     {
         try {
-            String connectionUrl = "jdbc:sqlserver://localhost:1433;databaseName=gametics;user=sa;password=123";
+            String connectionUrl = "jdbc:sqlserver://localhost:1433;databaseName=gametics;user=sa;password=p@ssword81";
             connection = DriverManager.getConnection(connectionUrl);
         } catch (SQLException e) {
             e.printStackTrace();
         }
         
-//        createAccountButton.setOnAction(actionEvent -> {
-//            onCreateAccount();
-//        });
+        createAccountButton.setOnAction(actionEvent -> {
+            onCreateAccount();
+        });
     }
 
-    @FXML
-    public void onCreateAccount() {
-        System.out.println("mara kha");
+    private void onCreateAccount() {
         String userName = userNameTextField.getText();
-        System.out.println(userName);
         String userEmail = userEmailTextField.getText();
         String userPassword = userPasswordField.getText();
 
@@ -55,7 +53,7 @@ public class RegistrationPageController {
             preparedStatement.setString(1, userName);
             preparedStatement.setString(2, userEmail);
             preparedStatement.setString(3, userPassword);
-            preparedStatement.executeQuery();
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }

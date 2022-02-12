@@ -35,7 +35,15 @@ public class LoginController {
         }
 
         createOneHyperLink.setOnAction(event -> {
-
+            FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("fxml/create-account-page.fxml"));
+            Scene scene = null;
+            try {
+                scene = new Scene(fxmlLoader.load());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Stage stage = (Stage) createOneHyperLink.getScene().getWindow();
+            stage.setScene(scene);
         });
 
         forgotPasswordHyperLink.setOnAction(event -> {
@@ -47,7 +55,7 @@ public class LoginController {
         String userName = userField.getText();
         String userPassword = passwordField.getText();
 
-        String sql_query = "select * from users where username = ? and password = ?";
+        String sql_query = "select * from Users where user_name = ? and user_password = ?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql_query);
             preparedStatement.setString(1, userName);
