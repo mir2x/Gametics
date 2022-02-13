@@ -18,4 +18,8 @@ public class GameModel {
     public void addGame(Game game) {
         gameList.add(game);
     }
+
+    public void clearList() {
+        gameList.clear();
+    }
 }

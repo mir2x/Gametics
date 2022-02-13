@@ -28,7 +28,7 @@ public class LoginController {
     @FXML
     public void initialize() {
         try {
-            String connectionUrl = "jdbc:sqlserver://localhost:1433;databaseName=gametics;user=sa;password=123";
+            String connectionUrl = "jdbc:sqlserver://localhost:1433;databaseName=gametics;user=sa;password=p@ssword81";
             connection = DriverManager.getConnection(connectionUrl);
         } catch (SQLException e) {
             e.printStackTrace();
