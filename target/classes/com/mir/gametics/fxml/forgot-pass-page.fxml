@@ -17,21 +17,19 @@
              fx:controller="com.mir.gametics.ForgotPasswordPageController">
    <center>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
+
             <AnchorPane prefHeight="780.0" prefWidth="1220.0">
-               <children>
+
                   <ImageView fitHeight="485.0" fitWidth="1220.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../picture/farr.jpg" />
-                     </image>
+                                             <Image url="@../picture/farr.jpg" />
                   </ImageView>
-                  <TextField layoutX="498.0" layoutY="573.0" prefHeight="45.0" prefWidth="241.0" promptText="Enter Your Email" />
+                  <TextField layoutX="498.0" layoutY="573.0" prefHeight="45.0" prefWidth="241.0" promptText="Enter Your Email" fx:id="emailTextField" />
                   <Button layoutX="538.0" layoutY="660.0" mnemonicParsing="false" text="Reset Password" fx:id="resetButton"/>
                   <Label layoutX="563.0" layoutY="523.0" text="Forgot Password ?" />
                   <Hyperlink layoutX="667.0" layoutY="661.0" text="Sign In" />
-               </children>
+
             </AnchorPane>
-         </children>
+
       </HBox>
    </center>
 </BorderPane>
