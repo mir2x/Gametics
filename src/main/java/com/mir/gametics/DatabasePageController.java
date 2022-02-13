@@ -178,7 +178,7 @@ public class DatabasePageController {
                     "from GamesBasicInfo\n" +
                     "         INNER JOIN GameCategory on GamesBasicInfo.game_id = GameCategory.game_id\n" +
                     "         INNER JOIN Category on Category.category_id = GameCategory.category_id\n" +
-                    "where game_name=?";
+                    "where game_name = ?";
             try {
                 preparedStatement = connection.prepareStatement(matchQuery);
                 preparedStatement.setString(1, searchedGame);
@@ -234,7 +234,7 @@ public class DatabasePageController {
         String findGameId = "select game_id\n" +
                 "from GamesBasicInfo\n" +
                 "where game_name = ?";
-        String findCategoryId = "select *\n" +
+        String findCategoryId = "select category_id\n" +
                 "from Category\n" +
                 "where category_name = ?";
         String completeInsertQuery = "insert into GameCategory\n" +
@@ -245,14 +245,12 @@ public class DatabasePageController {
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 gameId = resultSet.getString(1);
-                System.out.println(gameId);
             }
             preparedStatement = connection.prepareStatement(findCategoryId);
             preparedStatement.setString(1, category);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 categoryId = resultSet.getString(1);
-                System.out.println(categoryId);
             }
             preparedStatement = connection.prepareStatement(completeInsertQuery);
             preparedStatement.setString(1, gameId);
@@ -287,7 +285,6 @@ public class DatabasePageController {
                 resultSet = preparedStatement.executeQuery();
                 while (resultSet.next()) {
                     gameId = resultSet.getString(1);
-                    System.out.println(gameId);
                 }
 
                 preparedStatement = connection.prepareStatement(removeCategoryQuery);
