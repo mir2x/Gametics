@@ -1,10 +1,14 @@
 package com.mir.gametics;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.*;
 
 public class ForgotPasswordPageController {
@@ -16,6 +20,8 @@ public class ForgotPasswordPageController {
 
     @FXML
     private Button resetButton;
+    @FXML
+    private Hyperlink loginPageHyperLink;
 
     public void initialize()
     {
@@ -27,6 +33,13 @@ public class ForgotPasswordPageController {
         }
         resetButton.setOnAction(actionEvent -> {
           OnresetButton();
+        });
+        loginPageHyperLink.setOnAction(actionEvent -> {
+            try {
+                backToLoginPage();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
     }
 
@@ -46,7 +59,13 @@ public class ForgotPasswordPageController {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
 
+    private void backToLoginPage() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Gametics.class.getResource("fxml/login-page.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) resetButton.getScene().getWindow();
+        stage.setScene(scene);
     }
 
 

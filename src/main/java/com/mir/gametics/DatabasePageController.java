@@ -40,6 +40,8 @@ public class DatabasePageController {
 
     @FXML
     private Hyperlink advancedSearchHyperLink;
+    @FXML
+    private Hyperlink loginPageHyperLink;
 
 
     private TableColumn<Game, String> firstColumn;
@@ -144,8 +146,22 @@ public class DatabasePageController {
         deleteButton.setOnAction(event -> {
             deleteGame();
         });
+
+        loginPageHyperLink.setOnAction(event -> {
+            try {
+                backToLogin();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
+    private void backToLogin() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Gametics.class.getResource("fxml/login-page.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) addGameButton.getScene().getWindow();
+        stage.setScene(scene);
+    }
 
 
     public void initializeTable() {

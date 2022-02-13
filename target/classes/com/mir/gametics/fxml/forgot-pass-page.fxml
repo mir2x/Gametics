@@ -10,11 +10,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1220.0"
-            xmlns="http://javafx.com/javafx/17"
-            xmlns:fx="http://javafx.com/fxml/1"
-             fx:controller="com.mir.gametics.ForgotPasswordPageController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1220.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mir.gametics.ForgotPasswordPageController">
    <center>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
 
@@ -23,10 +19,10 @@
                   <ImageView fitHeight="485.0" fitWidth="1220.0" pickOnBounds="true" preserveRatio="true">
                                              <Image url="@../picture/farr.jpg" />
                   </ImageView>
-                  <TextField layoutX="498.0" layoutY="573.0" prefHeight="45.0" prefWidth="241.0" promptText="Enter Your Email" fx:id="emailTextField" />
-                  <Button layoutX="538.0" layoutY="660.0" mnemonicParsing="false" text="Reset Password" fx:id="resetButton"/>
+                  <TextField fx:id="emailTextField" layoutX="498.0" layoutY="573.0" prefHeight="45.0" prefWidth="241.0" promptText="Enter Your Email" />
+                  <Button fx:id="resetButton" layoutX="553.0" layoutY="643.0" mnemonicParsing="false" text="Reset Password" />
                   <Label layoutX="563.0" layoutY="523.0" text="Forgot Password ?" />
-                  <Hyperlink layoutX="667.0" layoutY="661.0" text="Sign In" />
+                   <Hyperlink fx:id="loginPageHyperLink" layoutX="548.0" layoutY="702.0" text="Back to Login Page" />
 
             </AnchorPane>
 
